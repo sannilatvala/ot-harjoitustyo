@@ -1,0 +1,155 @@
+commit 1ff6d193221ae309efdd21f59eec97bdc572365b
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:28:14 2023 +0200
+
+    file3 lisätty
+
+ tiedostoja/file3 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 16040774b08093e400889c5b3eea1a27a1f5e797
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:27:03 2023 +0200
+
+    poistettiin turhat
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file3.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 937ffc5a78fac79bd982eada92047596028f2699
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:25:09 2023 +0200
+
+    nimi muutettu
+
+ tiedostoja/{file2.txt => file22} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f5b0cb98257e5f7a1e832fa21bab444e106dffd7
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:15:24 2023 +0200
+
+    Revert "nimet muutettu"
+    
+    This reverts commit 339202ed3cef8c7f3a29092b9641fb7dd598313c.
+
+ tiedostoja/{file22 => file1.txt} | 0
+ tiedostoja/{file3 => file2.txt}  | 0
+ tiedostoja/file3.txt             | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 339202ed3cef8c7f3a29092b9641fb7dd598313c
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:13:17 2023 +0200
+
+    nimet muutettu
+
+ tiedostoja/{file1.txt => file22} | 0
+ tiedostoja/{file2.txt => file3}  | 0
+ tiedostoja/file3.txt             | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6f1229c169f08aee0865af845c6751c8dfc7de98
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 15:02:03 2023 +0200
+
+    kansio tiedostoja luotu
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b1e7b1946019ebf8fe1ed89ec3efc1390e3f4c80
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:49:26 2023 +0200
+
+    eka ja kolmas muutettu
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 4 +++-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit 839c1cb3fd8ea1644a9d2326f716d40a9cf901f1
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:43:35 2023 +0200
+
+    uudelleennimetty tiedosto.txt -> eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f8efb12a0338b4d3503db578691a39477908cf14
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:40:08 2023 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 99d49c74828311438e77cef3e346e86462f0a6a6
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:32:24 2023 +0200
+
+    muutos tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 602edbedd5ae41fe2803ce26177e9794348d2f1f
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:29:59 2023 +0200
+
+    muutos tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cee610939d7fbbe5f0b216aac8e49914402a3f62
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 14:02:11 2023 +0200
+
+    stuff ja testi.txt luotu
+
+ stuff/testi.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit aae39f6dce71dcd6eaa2758fa3e101853e9a7cf4
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 13:46:36 2023 +0200
+
+    kaksi muutosta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit b395217ca840acbdc948099963a778faf04b01fd
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 13:44:04 2023 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8a5f99c5db37295e8d31b92de3bea9cef7d64999
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 13:38:15 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 18b304dbe0941f49b6559144101285382ed8406d
+Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
+Date:   Thu Mar 16 13:27:26 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

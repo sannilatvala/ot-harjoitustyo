@@ -1,5 +1,3 @@
-moi
-
 commit 1ff6d193221ae309efdd21f59eec97bdc572365b
 Author: sannilatvala <119106675+sannilatvala@users.noreply.github.com>
 Date:   Thu Mar 16 15:28:14 2023 +0200

@@ -61,6 +61,8 @@ class TestMaksukortti(unittest.TestCase):
     def test_kortilla_pystyy_ostamaan_edullisen_lounaan_kun_kortilla_rahaa_vain_edullisen_lounaan_verran(self):
         kortti = Maksukortti(250)
         kortti.syo_edullisesti()
+        
+        self.assertEqual(str(kortti), "Kortilla on rahaa 0.00 euroa")
 
     def test_kortilla_pystyy_ostamaan_maukkaan_lounaan_kun_kortilla_rahaa_vain_maukkaan_lounaan_verran(self):
         kortti = Maksukortti(400)

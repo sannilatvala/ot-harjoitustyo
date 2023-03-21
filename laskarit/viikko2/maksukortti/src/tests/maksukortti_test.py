@@ -5,14 +5,6 @@ from maksukortti import Maksukortti
 
 class TestMaksukortti(unittest.TestCase):
     def setUp(self):
-        print("Set up goes here")
-
-    def test_hello_world(self):
-        self.assertEqual("Hello world", "Hello world")
-        
-
-class TestMaksukortti(unittest.TestCase):
-    def setUp(self):
         self.kortti = Maksukortti(1000)
 
     def test_konstruktori_asettaa_saldon_oikein(self):
@@ -69,4 +61,3 @@ class TestMaksukortti(unittest.TestCase):
         kortti.syo_maukkaasti()
 
         self.assertEqual(str(kortti), "Kortilla on rahaa 0.00 euroa")
-

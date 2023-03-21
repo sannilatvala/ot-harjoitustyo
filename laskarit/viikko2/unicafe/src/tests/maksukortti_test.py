@@ -16,16 +16,16 @@ class TestMaksukortti(unittest.TestCase):
 
         self.assertEqual(str(self.maksukortti), "Kortilla on rahaa 15.00 euroa")
 
-    def test_saldo_vahenee_oikein(self):
-        tulos = self.maksukortti.ota_rahaa(500)
+    def test_saldo_vahenee_oikein_kun_rahaa_tarpeeksi(self):
+        self.maksukortti.ota_rahaa(500)
 
         self.assertEqual(str(self.maksukortti), "Kortilla on rahaa 5.00 euroa")
 
-        return tulos
+        return True
 
-    def test_saldo_ei_muutu_jos_rahaa_ei_ole_tarpeeksi(self):
-        tulos = self.maksukortti.ota_rahaa(1500)
+    def test_saldo_ei_muutu_kun_rahaa_ei_tarpeeksi(self):
+        self.maksukortti.ota_rahaa(1500)
 
         self.assertEqual(str(self.maksukortti), "Kortilla on rahaa 10.00 euroa")
 
-        return tulos
+        return False

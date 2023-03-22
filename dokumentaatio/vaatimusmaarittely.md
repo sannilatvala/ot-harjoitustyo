@@ -2,7 +2,7 @@
 
 ## Pelin tarkoitus
 
-Pelin tarkoitus on kasvattaa matoa niin pitkäksi kuin mahdollista keräämällä 
+Pelin tarkoitus on ohjata matoa, joka sijaitsee peliludalla ja kasvattaa matoa niin pitkäksi kuin mahdollista keräämällä 
 ruokaa pelilaudalta törmäämättä esteisiin.
 
 ## Perusversion toiminnallisuudet
@@ -19,8 +19,3 @@ ruokaa pelilaudalta törmäämättä esteisiin.
 - Pelaaja pystyy valita pelin vaikeustason
 - Äänitehosteiden lisäys ruoan syönnille
 - Käärmeen, ruoan ja pelilaudan muokkaus mahdollisuudet pelaajalle
-
-
-
-
-

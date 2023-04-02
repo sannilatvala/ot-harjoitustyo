@@ -2,7 +2,7 @@
 
 - GameLoop-luokka luotu, joka vastaa pelin tapahtumista
 - Snake-luokka luotu, joka kuvastaa matoa
-- DrawObjects luokka luotu, joka pirtää näytön ja madon
+- DrawObjects luokka luotu, joka pirtää näytön, seinät ja madon
 - GameOver-luokka luotu, joka lopettaa pelin jos mato osuu seinään tai
 itseensä
 - MoveObjects-luokka luotu, joka liikuttaa matoa

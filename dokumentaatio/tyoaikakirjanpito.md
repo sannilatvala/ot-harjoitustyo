@@ -5,3 +5,4 @@
 |28.3    |4h        |Pelin koodausta|
 |30.3    |4h        |Pelin koodausta|
 |31.3    |5h        |Pelin ja testien koodausta|
+|2.4     |3h        |Pelin koodausta|

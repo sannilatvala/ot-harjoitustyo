@@ -20,8 +20,12 @@ sequenceDiagram
 	main ->> rautatietori: lataa_arvoa(kallen_kortti, 3)
 	rautatietori ->> kallen_kortti: kasvata_arvoa(3)
 	main ->> ratikka6: osta_lippu(kallen_kortti, 0)
+	ratikka6 ->> kallen_kortti: arvo()
+	kallen_kortti -->> ratikka6: 3
 	ratikka6 ->> kallen_kortti: vahenna_arvoa(1.5)
-	ratikka6 --> main: true
+	ratikka6 -->> main: true
 	main ->> bussi244: osta_lippu(kallen_kortti, 2)
-	bussi244 --> main: false
+	bussi244 ->> kallen_kortti: arvo()
+	kallen_kortti -->> bussi244: 1.5
+	bussi244 -->> main: false
 ```

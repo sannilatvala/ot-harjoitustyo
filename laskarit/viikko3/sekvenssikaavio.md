@@ -12,8 +12,7 @@ sequenceDiagram
 	machine ->> engine: start()
 	engine ->> tank: consume(5)
 	machine ->> engine: is_running()
-	engine --> machine: true
+	engine -->> machine: true
 	machine ->> engine: use_energy()
 	engine ->> tank: consume(10)
-	tank --> main 
 ```

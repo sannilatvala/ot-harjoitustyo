@@ -2,5 +2,5 @@
 __pycache__
 .coverage
 htmlcov
-src.code-workspace
+src/src.code-workspace
 data/game_instructions.txt

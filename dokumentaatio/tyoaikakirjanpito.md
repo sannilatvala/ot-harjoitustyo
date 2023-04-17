@@ -6,3 +6,9 @@
 |30.3    |4h        |Pelin koodausta|
 |31.3    |5h        |Pelin ja testien koodausta|
 |2.4     |3h        |Pelin koodausta|
+|5.4     |4h        |Pelin koodausta|
+|6.4     |4h        |Pelin koodausta|
+|12.4    |4h        |Pelin koodausta|
+|15.4    |2h        |Pelin koodausta|
+|16.4    |2h        |Testien koodausta|
+|17.4    |2h        |Pelin ja testien koodausta|

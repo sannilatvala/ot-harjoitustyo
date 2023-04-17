@@ -9,3 +9,15 @@ itseensä
 - Käyttäjä pystyy likuttamaan matoa nuolinäppäimillä
 - Testattu, että GameOver-luokka lopettaa pelin jos mato osuu johonkin
 seinään
+
+## Viikko 4
+
+- Lisätty aloitusnäkymä, missä lukee pelin ohjeet
+- Aloitusnäkymään lisätty start nappi, jota painamalla peli alkaa
+- Start napille lisätty oma luokka
+- Peliin lisätty seinät
+- Peliin lisätty ruokaa, jota syömällä mato kasvaa
+- Peliin lisätty Food luokka, joka kuvaa ruokaa
+- Lisätty testit Snake luokalle
+- Lisätty testit Food luokalle
+- Lisätty testit DrawObjects luokalle

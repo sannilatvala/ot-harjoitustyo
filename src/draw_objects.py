@@ -26,13 +26,17 @@ class DrawObjects:
         instructions = []
         dirname = os.path.dirname(__file__)
         filepath = os.path.join(dirname, "..", "data", "game_instructions.txt")
-        with open(filepath, "r", encoding="utf-8") as file:
-            for line in file:
-                text = font.render(line.strip(), True, self._colors.white())
-                instructions.append(text)
-        for text in instructions:
-            screen.blit(text, (position_x, position_y))
-            position_y += 30
+        try:
+            with open(filepath, "r", encoding="utf-8") as file:
+                for line in file:
+                    text = font.render(line.strip(), True,
+                                       self._colors.white())
+                    instructions.append(text)
+            for text in instructions:
+                screen.blit(text, (position_x, position_y))
+                position_y += 30
+        except FileNotFoundError:
+            pass
 
     def draw_walls(self, wall_size, screen, screen_height, screen_width):
         for row in range(screen_width//wall_size):

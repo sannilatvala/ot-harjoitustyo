@@ -21,3 +21,18 @@ seinään
 - Lisätty testit Snake luokalle
 - Lisätty testit Food luokalle
 - Lisätty testit DrawObjects luokalle
+
+## Viikko 5
+
+- Lisätty luokka GameView pelinäkymälle
+- Lisätty luokka StartView aloitusnäkymälle
+- Lisätty luokka Walls pelin seinille
+- Lisätty testit GameView luokalle 
+- Lisätty testit StartView luokalle
+- Lisätty luokka GameOverView lopetusnäytölle
+- Game over näytölle lisätty end game ja new game nappi
+- Peliin lisätty mahdollisuus asettaa käyttäjänimi
+- Lisätty CreateScreen luokka
+- Lisätty testit CreateScreen luokalle
+- Lisätty testit GameLoop luokalle
+- Lisätyy testit Buttons luokille

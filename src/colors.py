@@ -24,3 +24,9 @@ class Colors:
 
     def white(self):
         return (255, 255, 255)
+
+    def deep_pink(self):
+        return (255, 20, 147)
+
+    def red(self):
+        return (255, 0, 0)

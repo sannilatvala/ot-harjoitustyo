@@ -13,4 +13,7 @@
 |16.4    |2h        |Testien koodausta|
 |17.4    |3h        |Testien koodausta ja pylint virheiden korjausta|
 |18.4    |2h        |Pelin koodausta|
-|yht     |42h       ||
+|23.4    |4h        |Pelin koodausta|
+|24.4    |5h        |Pelin koodausta|  
+|25.4    |4h        |Pelin ja testien koodausta ja dokumentaatio|
+|yht     |55h       ||

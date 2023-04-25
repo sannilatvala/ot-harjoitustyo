@@ -1,54 +1,31 @@
 import pygame
+from game_over import GameOver
+from game_objects.snake import Snake
+from game_objects.food import Food
+from views.game_view import GameView
+from views.game_over_view import GameOverView
+from views.create_screen import CreateScreen
 
 
 class GameLoop:
-    def __init__(self, snake, food, draw_objects, events,
-                 clock, block, wall_size, snake_body, screen,
-                 screen_height, screen_width, game_over, start_button):
-        self._snake = snake
-        self._food = food
-        self._draw_objects = draw_objects
-        self._events = events
-        self._clock = clock
-        self._block = block
-        self._wall_size = wall_size
-        self._snake_body = snake_body
-        self._screen = screen
-        self._screen_height = screen_height
-        self._screen_width = screen_width
-        self._game_over = game_over
+    def __init__(self):
+        self._snake_body = [[105, 255], [75, 255], [45, 255]]
         self._dx = 0
         self._dy = 0
         self._start_move_snake = False
         self._change_direction_to = None
         self._direction = None
-        self._start_button = start_button
-        self._stop = False
-        self._start_game = False
-        self._food_position = self._food.new_food(
-            self._screen_height,
-            self._screen_width,
-            self._block,
-            self._wall_size
-        )
-
-    def start_screen(self):
-        self._draw_start_screen(self._screen)
-        pygame.display.flip()
-        while True:
-            if self._stop:
-                break
-            for event in self._events.get_event():
-                if event.type == pygame.QUIT:
-                    self._stop = True
-                if self._start_button.position():
-                    self._stop = True
-                    self._start_game = True
-        if self._start_game:
-            self.start()
+        self._food_position = Food().new_food()
+        self._points = 0
 
     def start(self):
-        while True:
+
+        screen = CreateScreen().create_screen()
+
+        running = True
+
+        while running:
+
             if self._game_events() is False:
                 break
 
@@ -57,27 +34,20 @@ class GameLoop:
             self._set_new_snake_position()
 
             self._check_food_collision()
-            if self._game_over_conditions(
-                    self._snake_body,
-                    self._screen_height,
-                    self._screen_width,
-                    self._block,
-                    self._wall_size):
+
+            if self._game_over_conditions(self._snake_body):
+                if GameOverView().draw_game_over_screen(self._points):
+                    GameLoop().start()
                 break
 
-            self._draw_screen(self._screen)
+            GameView().draw_game_screen(
+                screen, self._food_position, self._snake_body, self._points)
 
-            self._draw_walls(self._wall_size, self._screen,
-                             self._screen_height, self._screen_width)
-
-            self._draw_objects.draw_food(self._screen, self._food_position)
-
-            self._draw_snake(self._screen, self._block, self._snake_body)
-
-            self._clock.tick(10)
+            clock = pygame.time.Clock()
+            clock.tick(10)
 
     def _game_events(self):
-        for event in self._events.get_event():
+        for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     self._start_move_snake = True
@@ -106,48 +76,32 @@ class GameLoop:
 
     def _set_new_snake_position(self):
         if self._direction == "RIGHT":
-            self._dx = self._block
+            self._dx = 30
             self._dy = 0
         elif self._direction == "LEFT":
-            self._dx = -self._block
+            self._dx = -30
             self._dy = 0
         elif self._direction == "UP":
             self._dx = 0
-            self._dy = -self._block
+            self._dy = -30
         elif self._direction == "DOWN":
             self._dx = 0
-            self._dy = self._block
+            self._dy = 30
 
     def _check_food_collision(self):
         if self._snake_body[0] == self._food_position:
             collision = True
-            self._food_position = self._food.new_food(
-                self._screen_height, self._screen_width, self._block, self._wall_size)
+            self._food_position = Food().new_food()
+            self._points += 1
         else:
             collision = False
         if self._start_move_snake:
-            self._snake_body = self._snake.move_snake(
+            self._snake_body = Snake().move_snake(
                 self._snake_body, self._dx, self._dy, collision)
 
-    def _game_over_conditions(self, snake_body, screen_height, screen_width, block, wall_size):
-        if self._game_over.is_touching_wall(snake_body, screen_height,
-                                            screen_width, block, wall_size):
+    def _game_over_conditions(self, snake_body):
+        if GameOver().is_touching_wall(snake_body):
             return True
-        if self._game_over.is_touching_snake_body(snake_body):
+        if GameOver().is_touching_snake_body(snake_body):
             return True
         return False
-
-    def _draw_start_screen(self, screen):
-        self._draw_objects.draw_screen(screen)
-        self._draw_objects.draw_start_button(screen)
-        self._draw_objects.draw_game_instructions(screen)
-
-    def _draw_screen(self, screen):
-        self._draw_objects.draw_screen(screen)
-
-    def _draw_walls(self, wall_size, screen, screen_height, screen_width):
-        self._draw_objects.draw_walls(
-            wall_size, screen, screen_height, screen_width)
-
-    def _draw_snake(self, screen, block, snake_body):
-        self._draw_objects.draw_snake(screen, block, snake_body)

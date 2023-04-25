@@ -54,8 +54,7 @@ class StartView:
         font = pygame.font.SysFont("Comic Sans MS", 20)
         instructions = []
         dirname = os.path.dirname(__file__)
-        filepath = os.path.join(dirname, "..", "..",
-                                "data", "game_instructions.txt")
+        filepath = os.path.join(dirname, "game_instructions.txt")
         try:
             with open(filepath, "r", encoding="utf-8") as file:
                 for line in file:

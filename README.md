@@ -6,6 +6,7 @@
 - [Työaikakirjanpito](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [Arkkitehtuuri](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+- [Releases](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko5)
 
 
 ### Käyttöohjeet

@@ -1,12 +1,18 @@
 import os
 import pygame
 from colors import Colors
-from game_buttons.start_button import StartButton
-from views.create_screen import CreateScreen
+from ui.game_buttons.start_button import StartButton
+from ui.create_screen import CreateScreen
+from repositories.high_score_repository import HighScoreRepository
 
 
 class StartView:
+    """Pelin aloituksesta vastaava näkymä."""
+
     def __init__(self):
+        """Luokan konstruktori.
+        """
+
         self._colors = Colors()
         self._start_button = StartButton()
         self._create_screen = CreateScreen()
@@ -16,6 +22,8 @@ class StartView:
         self._active = False
 
     def draw_start_screen(self):
+        """Alustaa aloitusnäkymän.
+        """
 
         self._screen = self._create_screen.create_screen()
 
@@ -32,7 +40,8 @@ class StartView:
                     self._running = False
 
                 if self._draw_username_input(self._screen, event, font, input_rect):
-                    return True
+                    HighScoreRepository().create_user(self._input_text)
+                    return self._input_text
 
                 self._draw_username_text(self._screen)
 
@@ -86,12 +95,28 @@ class StartView:
 
         pygame.time.delay(200)
 
+    def _draw_username_already_exists(self, screen):
+
+        font = pygame.font.SysFont("Comic Sans MS", 20)
+
+        text = font.render(
+            "Username already exists", True, self._colors.red())
+
+        screen.blit(text, (240, 460))
+
+        pygame.display.flip()
+
+        pygame.time.delay(500)
+
     def _draw_username_input(self, screen, event, font, input_rect):
 
         if self._input_text:
             if self._start_button.position(event):
-                self._running = False
-                return True
+                if HighScoreRepository().check_if_username_exist(self._input_text):
+                    self._running = False
+                    return True
+                else:
+                    self._draw_username_already_exists(screen)
 
         if self._start_button.position(event) and not self._input_text:
             self._draw_red_username(screen)

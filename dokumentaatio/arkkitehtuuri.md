@@ -1,3 +1,26 @@
+# Arkkitehtuuri
+
+## Rakenne
+
+### Pakkausrakenne
+
+```mermaid
+graph LR;
+    ui -.-> repositories
+    repositories -.-> database
+    src -.-> entites
+    src -.-> ui
+
+```
+## Käyttöliittymä
+
+Käyttöliitymä sisältää kolme eri näkymää:
+
+- Pelin aloitusnäkymä
+- Itse pelinäkymä
+- Pelin lopetusnäkymä
+
+
 ### Luokkakaavio
 
 
@@ -23,35 +46,48 @@ classDiagram
 
 ```
 
-### Sekvenssikaavio
+
+## Sekvenssikaaviot
+
+### Pelin aloitus
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant UI
+    User ->> UI: create username
+    User ->> UI: click start button
+    participant HighScoreRepository
+    UI ->> HighScoreRepository: create_user()
+    HighScoreRepository -->> UI: user
+```
+
+### Pelin kulku
 
 
 ```mermaid
 sequenceDiagram
     participant main
-    participant startview
-    main ->> startview: StartView()
-    main ->> startview: draw_start_screen()
-    startview ->> main: True
-    participant startbutton
-    startview ->> startbutton: StartButton()
-    participant createscreen
-    startview ->> createscreen: CreateScreen()
-    participant gameloop
-    main ->> gameloop: GameLoop()
-    main ->> gameloop: start()
-    participant gameover
-    gameloop ->> gameover: GameOver()
-    participant snake
-    gameloop ->> snake: Snake()
-    participant food
-    gameloop ->> food: Food()
-    participant gameview
-    gameloop ->> gameview: GameView()
-    participant gameoverview
-    gameloop ->> gameoverview: GameOverView()
-    participant createscreen
-    gameloop ->> createscreen: CreateScreen()
-
+    participant GameLoop
+    main ->> GameLoop: start()
+    participant Food
+    GameLoop ->> Food: new_food()
+    participant CreateScreen
+    GameLoop ->> CreateScreen: create_screen()
+    participant Snake
+    GameLoop ->> Snake: move_snake()
+    Snake -->> GameLoop: snake_body
+    participant GameOver
+    GameLoop ->> GameOver: is_touching_wall()
+    GameLoop ->> GameOver: is_touching_snake_body()
+    GameOver -->> GameLoop: False
+    participant GameView
+    GameLoop ->> GameView: draw_game_screen()
+    GameLoop ->> GameOver: is_touching_wall()
+    GameLoop ->> GameOver: is_touching_snake_body()
+    GameOver -->> GameLoop: True
+    participant GameOverView
+    GameLoop ->> GameOverView: draw_game_over_screen()
+    GameOverView -->> GameLoop: True
 
 ```

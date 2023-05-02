@@ -1,5 +1,9 @@
 ## SnakeGame
 
+Pelin tarkoituksena on ohjata matoa ja syödä ruokaa pelialueelta.
+Kun mato syö ruokaa se kasvaa pituudeltaan. Kun mato osuu seinään tai
+itseensä peli päättyy.
+
 ### Dokumentaatio
 
 - [Vaatimusmaarittely](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)

@@ -1,14 +1,20 @@
 import pygame
 from game_over import GameOver
-from game_objects.snake import Snake
-from game_objects.food import Food
-from views.game_view import GameView
-from views.game_over_view import GameOverView
-from views.create_screen import CreateScreen
+from entities.snake import Snake
+from entities.food import Food
+from ui.game_view import GameView
+from ui.create_screen import CreateScreen
+from ui.game_over_view import GameOverView
 
 
 class GameLoop:
+    """Pelin toiminnasta vastaava luokka.
+    """
+
     def __init__(self):
+        """Luokan konstruktori.
+        """
+
         self._snake_body = [[105, 255], [75, 255], [45, 255]]
         self._dx = 0
         self._dy = 0
@@ -18,7 +24,12 @@ class GameLoop:
         self._food_position = Food().new_food()
         self._points = 0
 
-    def start(self):
+    def start(self, username):
+        """Aloittaa pelin.
+
+        Args:
+            username: muuttuja käyttäjänimelle.
+        """
 
         screen = CreateScreen().create_screen()
 
@@ -33,15 +44,20 @@ class GameLoop:
 
             self._set_new_snake_position()
 
-            self._check_food_collision()
+            collision = self._check_food_collision(
+                self._snake_body, self._food_position)
+
+            if self._start_move_snake:
+                self._snake_body = Snake().move_snake(
+                    self._snake_body, self._dx, self._dy, collision)
 
             if self._game_over_conditions(self._snake_body):
-                if GameOverView().draw_game_over_screen(self._points):
-                    GameLoop().start()
+                if GameOverView().draw_game_over_screen(self._points, username):
+                    GameLoop().start(username)
                 break
 
             GameView().draw_game_screen(
-                screen, self._food_position, self._snake_body, self._points)
+                screen, self._food_position, self._snake_body, self._points, username)
 
             clock = pygame.time.Clock()
             clock.tick(10)
@@ -88,16 +104,14 @@ class GameLoop:
             self._dx = 0
             self._dy = 30
 
-    def _check_food_collision(self):
-        if self._snake_body[0] == self._food_position:
+    def _check_food_collision(self, snake_body, food_position):
+        if snake_body[0] == food_position:
             collision = True
             self._food_position = Food().new_food()
             self._points += 1
         else:
             collision = False
-        if self._start_move_snake:
-            self._snake_body = Snake().move_snake(
-                self._snake_body, self._dx, self._dy, collision)
+        return collision
 
     def _game_over_conditions(self, snake_body):
         if GameOver().is_touching_wall(snake_body):

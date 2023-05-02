@@ -1,28 +1,43 @@
 from random import randrange
 import pygame
-from colors import Colors
 
 
 class Food:
+    """Ykisttäistä ruokaa kuvaava luokka.
+    """
+
     def __init__(self):
-        self._colors = Colors()
+        """Luokan kosntruktori.
+        """
+
         self._screen_width = 690
         self._screen_height = 570
         self._block_size = 30
         self._wall_size = 15
 
     def food(self, position):
+        """Palauttaa ruokaa vastaavan objektin.
+
+        Args:
+            position: lista, joka kuvaa ruoan sijaintia.
+
+        Returns:
+            Palauttaa 'pygame.Rect'-objektin
+        """
+
         rect = pygame.Rect(position[0], position[1], 30, 30)
         return rect
 
     def new_food(self):
+        """Palauttaa uuden ruoan sijainnin.
+
+        Returns:
+            Palauttaa listan, joka kuvaa ruoan sijaintia.
+        """
+
         food_x = randrange(self._wall_size, self._screen_width -
                            self._block_size - self._wall_size, self._block_size)
         food_y = randrange(self._wall_size, self._screen_height -
                            self._block_size - self._wall_size, self._block_size)
         food_position = [food_x, food_y]
         return food_position
-
-    def draw_food(self, screen, food_position):
-        food = self.food(food_position)
-        pygame.draw.rect(screen, self._colors.white(), food)

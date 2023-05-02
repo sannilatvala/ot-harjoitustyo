@@ -27,8 +27,6 @@ seinään
 - Lisätty luokka GameView pelinäkymälle
 - Lisätty luokka StartView aloitusnäkymälle
 - Lisätty luokka Walls pelin seinille
-- Lisätty testit GameView luokalle 
-- Lisätty testit StartView luokalle
 - Lisätty luokka GameOverView lopetusnäytölle
 - Game over näytölle lisätty end game ja new game nappi
 - Peliin lisätty mahdollisuus asettaa käyttäjänimi
@@ -36,3 +34,9 @@ seinään
 - Lisätty testit CreateScreen luokalle
 - Lisätty testit GameLoop luokalle
 - Lisätyy testit Buttons luokille
+
+## Viikko 6
+
+- Lisätty luokka HighScoreRepository parhaimmille tuloksille
+- Lisätty funktiot tietokantataulun highscores luomiselle
+- Lisätty viiden pelaajan parhaat tulokset näkyviin lopetusnäytölle 

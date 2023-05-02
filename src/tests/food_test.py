@@ -1,6 +1,6 @@
 import unittest
 import pygame
-from game_objects.food import Food
+from entities.food import Food
 
 
 class TestGameOver(unittest.TestCase):

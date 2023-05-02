@@ -1,12 +1,19 @@
 import pygame
 from colors import Colors
-from game_buttons.end_game_button import EndGameButton
-from game_buttons.new_game_button import NewGameButton
-from views.create_screen import CreateScreen
+from ui.game_buttons.end_game_button import EndGameButton
+from ui.game_buttons.new_game_button import NewGameButton
+from ui.create_screen import CreateScreen
+from repositories.high_score_repository import HighScoreRepository
 
 
 class GameOverView:
+    """Pelin lopetusnäytöstä vastaava näkymä.
+    """
+
     def __init__(self):
+        """Luokan konstruktori.
+        """
+
         self._colors = Colors()
         self._end_game_button = EndGameButton()
         self._new_game_button = NewGameButton()
@@ -15,7 +22,17 @@ class GameOverView:
         self._screen_width = 690
         self._screen = None
 
-    def draw_game_over_screen(self, points):
+    def draw_game_over_screen(self, points, username):
+        """Alustaa lopetusnäkymän.
+
+        Args:
+            points: muuttuja pelissä kerätyille pisteille.
+            username: muuttuja käyttäjänimelle.
+
+        Returns:
+            Palautta None tai Boolean-arvon True
+
+        """
 
         self._screen = self._create_screen.create_screen()
 
@@ -26,6 +43,10 @@ class GameOverView:
         self._draw_new_game_button()
 
         self._draw_game_over_text(self._screen, points)
+
+        self._update_high_score(points, username)
+
+        self._draw_highscores(self._screen)
 
         pygame.display.flip()
 
@@ -62,3 +83,24 @@ class GameOverView:
             f"points: {points}", True, self._colors.white())
 
         screen.blit(points, (280, 200))
+
+    def _update_high_score(self, points, username):
+        HighScoreRepository().update_highscore(points, username)
+
+    def _draw_highscores(self, screen):
+        font = pygame.font.SysFont("Comic Sans MS", 20)
+
+        text = font.render(
+            "High scores:", True, self._colors.white())
+
+        screen.blit(text, (50, 70))
+
+        highscores = HighScoreRepository().find_highest_highscores()
+
+        y = 100
+
+        for i in range(len(highscores)):
+            highscore = font.render(
+                f"{highscores[i][0]}: {highscores[i][1]}", True, self._colors.white())
+            screen.blit(highscore, (50, y))
+            y += 20

@@ -1,6 +1,6 @@
 import unittest
 import pygame
-from game_objects.snake import Snake
+from entities.snake import Snake
 
 
 class TestGameOver(unittest.TestCase):

@@ -13,8 +13,7 @@ itseensä peli päättyy.
 
 ### Releases
 
-- [Viikko 5](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko5)
-- [Viikko 6](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko6)
+- [Releases](https://github.com/sannilatvala/ot-harjoitustyo/releases)
 
 
 ### Käyttöohjeet

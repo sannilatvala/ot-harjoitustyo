@@ -10,7 +10,11 @@ itseensä peli päättyy.
 - [Työaikakirjanpito](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [Arkkitehtuuri](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
-- [Releases](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko5)
+
+### Releases
+
+- [Viikko 5](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko5)
+- [Viikko 6](https://github.com/sannilatvala/ot-harjoitustyo/releases/tag/Viikko6)
 
 
 ### Käyttöohjeet

@@ -1,6 +1,7 @@
 Game instructions:
 
 - Use the arrow keys to control the snake
+- Start moving the snake by pressing the right arrow key
 - When you eat food your snake grows
-- The game ends when you touch the wall or the snake body
+- The game ends when you touch the wall or the snake
 - Start game by pressing the start button

@@ -21,6 +21,10 @@ Pelin voi alottaa kun on asettanut itselleen käyttäjänimen ja painamalla star
 
 ### Pelin pelaaminen
 
+Pelinäkymä:
+
+![](https://github.com/sannilatvala/ot-harjoitustyo/assets/119106675/bc63426a-d865-4003-931e-04ad88abf97f)
+
 Kun on painanut start nappia ja pelinäkymä on tullut esille voi pelin pelaamisen aloittaa. Matoa ohjataan nuolinäppäimillä. Kun mato syö ruokaa se kasvaa. Jos mato osuu seinään tai itseensä peli päättyy.
 
 ### Pelin lopetus

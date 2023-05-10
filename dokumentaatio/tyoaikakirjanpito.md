@@ -19,4 +19,5 @@
 |27.4    |2h        |Koodin korjausta ja docstring|
 |29.4    |2h        |Pelin ja testien koodaamista|
 |2.5     |2h        |Dokumentaatio|
-|yht     |62h       ||
+|10.5    |4h        |Dokumentaatio, testit ja koodin viimeistely|
+|yht     |66h       ||

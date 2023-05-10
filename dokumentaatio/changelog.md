@@ -40,3 +40,7 @@ seinään
 - Lisätty luokka HighScoreRepository parhaimmille tuloksille
 - Lisätty funktiot tietokantataulun highscores luomiselle
 - Lisätty viiden pelaajan parhaat tulokset näkyviin lopetusnäytölle 
+
+## Viikko 7
+
+- Lisätty testit HighScoreRepository luokalle

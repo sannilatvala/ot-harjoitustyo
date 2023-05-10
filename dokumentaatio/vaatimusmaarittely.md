@@ -20,6 +20,7 @@ matoa niin pitkäksi kuin mahdollista keräämällä ruokaa ja törmäämättä 
 - Pisteet, eli määrä kerättyä ruokaa, näkyy pelaajalle - tehty
 - Pelin päätyttyä pelaaja pystyy joko aloittaa uuden pelin tai lopettaa pelin - tehty
 - Pelaaja pystyy asettaa itselleen käyttäjänimen - tehty
+    - Käyttäjänimi täytyy olla uniikki ja koostua vähintään yhdestä ja enintään kymmenestä kirjaimesta tai numerosta.
 - Pelin päätyttyä parhaat tulokset näkyy ruudulla - tehty
 - Pelaaja pystyy valita pelin vaikeustason
 - Äänitehosteiden lisäys ruoan syönnille

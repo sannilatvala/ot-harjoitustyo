@@ -46,7 +46,11 @@ class HighScoreRepository:
                             (username, highscore) values (?, ?)""",
                                      [username, 0])
 
-        self._connection.commit()
+            self._connection.commit()
+
+            return username
+
+        return None
 
     def update_highscore(self, points, username):
         """Päivittää käyttäjän parasta tulosta.
@@ -73,6 +77,10 @@ class HighScoreRepository:
 
             self._connection.commit()
 
+            return points
+
+        return current_highscore
+
     def find_highest_highscores(self):
         """Palauttaa 5 parhainta tulosta tietokannassa.
         """
@@ -98,3 +106,15 @@ class HighScoreRepository:
 
         if user is None:
             return True
+        else:
+            return False
+        
+    def delete_all(self):
+        """Poistaa kaikki käyttäjät ja ennätykset
+        """
+
+        cursor = self._connection.cursor()
+
+        cursor.execute("delete from highscores")
+
+        self._connection.commit()

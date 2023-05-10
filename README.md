@@ -11,6 +11,7 @@ itseensä peli päättyy.
 - [Työaikakirjanpito](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [Arkkitehtuuri](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
+- [Testausdokumentti](https://github.com/sannilatvala/ot-harjoitustyo/blob/main/dokumentaatio/testaus.md)
 
 ### Releases
 

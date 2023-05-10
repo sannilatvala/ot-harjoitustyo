@@ -4,3 +4,4 @@ __pycache__
 htmlcov
 src/src.code-workspace
 data/game_instructions.txt
+src/database/highscores.db

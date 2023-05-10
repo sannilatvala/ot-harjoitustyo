@@ -20,6 +20,8 @@ Käyttöliitymä sisältää kolme eri näkymää:
 - Itse pelinäkymä
 - Pelin lopetusnäkymä
 
+Jokaisella näistä on oma luokka ja vain yksi näkymä näytetään kerrallaan.
+
 
 ### Luokkakaavio
 
@@ -83,11 +85,21 @@ sequenceDiagram
     GameOver -->> GameLoop: False
     participant GameView
     GameLoop ->> GameView: draw_game_screen()
+```
+
+### Pelin päättyminen
+
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant GameLoop
+    participant GameOver
     GameLoop ->> GameOver: is_touching_wall()
     GameLoop ->> GameOver: is_touching_snake_body()
     GameOver -->> GameLoop: True
     participant GameOverView
     GameLoop ->> GameOverView: draw_game_over_screen()
-    GameOverView -->> GameLoop: True
-
+    GameOverView -->> GameLoop: False
+    User ->> GameOverView: click end game button
 ```

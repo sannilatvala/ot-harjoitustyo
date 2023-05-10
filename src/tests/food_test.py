@@ -3,7 +3,7 @@ import pygame
 from entities.food import Food
 
 
-class TestGameOver(unittest.TestCase):
+class TestFood(unittest.TestCase):
     def setUp(self):
         self.food = Food()
         self.screen_height = 570
@@ -16,6 +16,7 @@ class TestGameOver(unittest.TestCase):
         self.assertEqual(self.food.food(position), pygame.Rect(0, 0, 30, 30))
 
     def test_new_food_returns_correct_position(self):
-        food_position = self.food.new_food()
+        snake_body = [[0, 0]]
+        food_position = self.food.new_food(snake_body)
         self.assertTrue(food_position[0] in range(self.wall_size, self.screen_width - self.block - self.wall_size)
                         and food_position[1] in range(self.wall_size, self.screen_height - self.block - self.wall_size))

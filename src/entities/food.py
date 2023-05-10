@@ -28,7 +28,7 @@ class Food:
         rect = pygame.Rect(position[0], position[1], 30, 30)
         return rect
 
-    def new_food(self):
+    def new_food(self, snake_body):
         """Palauttaa uuden ruoan sijainnin.
 
         Returns:
@@ -40,4 +40,12 @@ class Food:
         food_y = randrange(self._wall_size, self._screen_height -
                            self._block_size - self._wall_size, self._block_size)
         food_position = [food_x, food_y]
+
+        while food_position in snake_body:
+            food_x = randrange(self._wall_size, self._screen_width -
+                           self._block_size - self._wall_size, self._block_size)
+            food_y = randrange(self._wall_size, self._screen_height -
+                           self._block_size - self._wall_size, self._block_size)
+            food_position = [food_x, food_y]
+
         return food_position

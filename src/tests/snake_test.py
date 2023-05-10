@@ -3,7 +3,7 @@ import pygame
 from entities.snake import Snake
 
 
-class TestGameOver(unittest.TestCase):
+class TestSnake(unittest.TestCase):
     def setUp(self):
         self.snake = Snake()
         self.block_size = 30

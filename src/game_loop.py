@@ -21,7 +21,7 @@ class GameLoop:
         self._start_move_snake = False
         self._change_direction_to = None
         self._direction = None
-        self._food_position = Food().new_food()
+        self._food_position = Food().new_food(self._snake_body)
         self._points = 0
 
     def start(self, username):
@@ -107,7 +107,7 @@ class GameLoop:
     def _check_food_collision(self, snake_body, food_position):
         if snake_body[0] == food_position:
             collision = True
-            self._food_position = Food().new_food()
+            self._food_position = Food().new_food(snake_body)
             self._points += 1
         else:
             collision = False

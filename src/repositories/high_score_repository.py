@@ -106,9 +106,9 @@ class HighScoreRepository:
 
         if user is None:
             return True
-        else:
-            return False
-        
+
+        return False
+
     def delete_all(self):
         """Poistaa kaikki käyttäjät ja ennätykset
         """

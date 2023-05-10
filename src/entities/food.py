@@ -43,9 +43,9 @@ class Food:
 
         while food_position in snake_body:
             food_x = randrange(self._wall_size, self._screen_width -
-                           self._block_size - self._wall_size, self._block_size)
+                               self._block_size - self._wall_size, self._block_size)
             food_y = randrange(self._wall_size, self._screen_height -
-                           self._block_size - self._wall_size, self._block_size)
+                               self._block_size - self._wall_size, self._block_size)
             food_position = [food_x, food_y]
 
         return food_position

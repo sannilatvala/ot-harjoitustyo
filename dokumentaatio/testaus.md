@@ -21,7 +21,7 @@ HighScoreRepository-luokka testataan TestHighScoreRepository-luokalla
 
 ![](https://github.com/sannilatvala/ot-harjoitustyo/assets/119106675/30fb0545-54cd-4399-bd9d-6a3c867f200e)
 
-Testaamatta jäi osa GameLoop-luokasta sekä koko initialize_database.py tiedosto.
+Testaamatta jäi osa GameLoop-luokasta ja osa initialize_database.py tiedostostosta.
 
 ## Järjestelmätestaus
 

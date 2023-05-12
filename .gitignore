@@ -5,3 +5,4 @@ htmlcov
 src/src.code-workspace
 data/game_instructions.txt
 src/database/highscores.db
+src/tests/highscorestest.db

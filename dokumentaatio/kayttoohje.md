@@ -1,10 +1,10 @@
 ## Käyttöohje
 
-Lataa projektin viimeismmän releasen lähdekoodi
+Lataa projektin viimeismmän releasen lähdekoodi.
 
 ### Ohjelman käynnistäminen
 
-Asenna ensin riippuvuudet komennolla
+Asenna ensin riippuvuudet komennolla:
 
 ```bash
 poetry install

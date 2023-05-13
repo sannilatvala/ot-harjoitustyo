@@ -20,4 +20,5 @@
 |29.4    |2h        |Pelin ja testien koodaamista|
 |2.5     |2h        |Dokumentaatio|
 |10.5    |4h        |Dokumentaatio, testit ja koodin viimeistely|
-|yht     |66h       ||
+|12.5    |2h        |Pelin viimeistely|
+|yht     |68h       ||
